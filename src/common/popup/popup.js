@@ -23,12 +23,16 @@ function displayCopyPanel(ticket) {
 
   var commitMessage = "[#" + ticket.id + "] " + ticket.title;
   var gitBranch = cleanTitleForGitBranch(ticket.type, ticket.id + "-" + ticket.title);
+  var commitMessageCode = "git add . ; git commit -m \""+commitMessage+"\" ; git push ; git checkout master";
+  var gitBranchCode = "git checkout -b "+gitBranch+" ; git push -u origin "+gitBranch;
 
   $("#content").append("<h1>" + commitMessage + "</h1>");
 
   linkList = "<ul class='button-list'>"+
-             "<li><a href='#' class='to-clipboard' data-clipboard-text='" + escape(commitMessage) + "'>Commit message</a></li>" +
              "<li><a href='#' class='to-clipboard' data-clipboard-text='" + escape(gitBranch)     + "'>Branch name</a></li>" +
+             "<li><a href='#' class='to-clipboard' data-clipboard-text='" + escape(commitMessage) + "'>Commit message</a></li>" +
+             "<li><a href='#' class='to-clipboard' data-clipboard-text='" + escape(gitBranchCode)     + "'>Branch code</a></li>" +
+             "<li><a href='#' class='to-clipboard' data-clipboard-text='" + escape(commitMessageCode) + "'>Commit code</a></li>" +
              "</ul>"
   $("#content").append(linkList);
 
