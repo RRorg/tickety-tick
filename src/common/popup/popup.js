@@ -120,7 +120,7 @@ function copyToClipboard(text) {
     copyFrom.remove();
   } else if (bowser.firefox && self.port) {
     self.port.emit("set-clipboard", text);
-  } else if (bowser.safari) {
+  } else {
     prompt('Here you go:', text);
   }
 }
