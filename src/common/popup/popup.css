@@ -5,7 +5,7 @@
  */
 
 body {
-  font-family: 'Lucida Grande', sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 11px;
 }
 
@@ -27,6 +27,10 @@ a {
 h1 {
   font-size: 1.1em;
   font-weight: 1.1;
+}
+
+h1 img {
+  vertical-align:middle;
 }
 
 .button-list {
@@ -59,6 +63,38 @@ h1 {
   display: block;
   padding: 8px;
   background-color: #c32f34;
+  border-radius:20px;
+  text-transform:uppercase;
+  text-align:center;
+  overflow:hidden;
+  position:relative;
+  font-weight:bold;
+  transition:0.3s background-color;
+}
+
+.button-list li a::before {
+  content:'';
+  display:block;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAQAAAAm93DmAAAA5klEQVR4Ae3MJVQGQQAA4cUK3gverxf6e1jDGu5Q6QGnByzRM+mn4A6dK3jFbXBfYfcOZ6Z/gny2sO2CMZKFPLZwq10FPm8bX/shTw2bwUWihDZyeWrEDEaEITw7cI8SirT3W4AW/VlwkoRwQZgmxQ3soe3Fg1oSc554EUWgIZ3BdS6kpDM4QrmUdAeFkJDBQAkZDJSQwUAp6QyOkvp4I3eNE+cCFqKuzgXMQd2cAygElaziv/kcOHMC5eEDfA/wH/wHD8IGO0MGhcCjSPGaA6iLyA8BN/Hf9bkZHMS2LT2YzrwdR/4VjilUCdi7kzIAAAAASUVORK5CYII=);
+  position:absolute;
+  width:15px;
+  height:15px;
+  top:8px;
+  right:20px;
+  background-size:cover;
+  background-position:50% 50%;
+  transform:translateX(20px);
+  opacity:0;
+  transition:0.4s all;
+}
+
+.button-list li a:hover::before {
+  opacity:1;
+  transform:translateX(0px);
+}
+
+.button-list li a:hover {
+  background-color: #A0272B;
 }
 
 .to-select {
